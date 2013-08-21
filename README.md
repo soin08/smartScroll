@@ -1,2 +1,3 @@
-Will become a heading
+SmartScroll
 ==============
+Documentation and demos soon to come. 
