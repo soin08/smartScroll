@@ -1,3 +1,8 @@
+// VERSION: 1.0 LAST UPDATE: 23.08.2012
+/* 
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
 (function($) {    
     $.fn.smartScroll = function(options) {
         // Extend the default options with those provided.        
@@ -13,7 +18,7 @@
         function manageFixedPos() { //add or remove fixed position of the block
             if(opts.addFixedPosition) {           
                 var y = $(window).scrollTop();
-                if(y >= top) {
+                if(y >= top) {                   
                     this.css({position:'fixed', top:0});           
                 }
                 else {
@@ -80,6 +85,6 @@
          onDirectionChangeUp:function() {},
          onDirectionChangeDown:function() {},
          onScrollingDone:function() {},
-         addFixedPosition = true    
+         addFixedPosition : true    
     }; 
 }(jQuery));

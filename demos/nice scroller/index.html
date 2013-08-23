@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>smartScroll demo: nice scroller</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="jqueryRotate3.js"></script> <!-- a nice cross browser rotate plugin -->
+<script src="../../jquery.smartScroll.js"></script>
+<script>
+  //a jquery plugin to rotate a div from http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
+  function loaded() {
+    $('#scroller').smartScroll({
+        onDirectionChangeUp:function() {
+            $('#scroller').rotate({animateTo:0});
+        },
+        onDirectionChangeDown: function() {
+            $('#scroller').rotate({animateTo:180});
+        }
+    })
+  }
+</script>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+h1 {
+    margin: 5px 0;
+}
+#wrapper {
+    width: 500px; 
+    margin: 0 auto;
+   
+}
+#content {
+     border: 1px solid #CCC;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+       height: 3000px;
+       background: #F5f5f5;
+}
+#scroller {
+    margin-top:100px;
+    width: 74px;
+    height: 74px;
+    background: url(scrollup_btn.png);  
+    cursor: pointer;
+}
+.tip {
+    background: #17c60f;
+    padding: 8px;
+     -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border: 3px dotted green;
+}
+.tip ul {
+    margin: 10px 0 5px 0;
+    font-size: 17px;
+}
+</style>
+</head>
+<body onload="loaded()">
+<div id="wrapper">
+  <h1>smartScroll demo: nice scroller</h1>
+  <small>A rotation plugin is used in this demo.</small> 
+  <div class="tip">
+      <strong>Try the following to see how it works:</strong>
+      <ul>
+        <li>Scroll down to see the button;</li>
+        <li>Press the button to scroll up, press again to scroll down to the previous position;</li>
+        <li>Press the button to scroll up, than manually scroll down to the previous position or lower;</li>
+        <li>Scroll up and down manually to see the button's behaviour;</li>
+        <li>Scroll down and refresh the page.</li>
+      </ul>
+  </div>
+  <div id="content">
+    <div id="scroller"></div>
+  </div>
+</div>
+</body>
+</html>
